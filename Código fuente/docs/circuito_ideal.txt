@@ -1,0 +1,45 @@
+------------------------------------------------------PUERTA NUMERO: 0 
+TIPO PUERTA: OR 
+CONEXIONES: [-1, -3] 
+SALIDA: 0 
+
+------------------------------------------------------PUERTA NUMERO: 1 
+TIPO PUERTA: AND 
+CONEXIONES: [-2, -1] 
+SALIDA: 0 
+
+------------------------------------------------------PUERTA NUMERO: 2 
+TIPO PUERTA: NOT 
+CONEXIONES: [-3, -2] 
+SALIDA: True 
+
+------------------------------------------------------PUERTA NUMERO: 3 
+TIPO PUERTA: NAND 
+CONEXIONES: [-1, 1] 
+SALIDA: True 
+
+------------------------------------------------------PUERTA NUMERO: 4 
+TIPO PUERTA: XOR 
+CONEXIONES: [1, -3] 
+SALIDA: 0 
+
+------------------------------------------------------PUERTA NUMERO: 5 
+TIPO PUERTA: NOR 
+CONEXIONES: [-2, 2] 
+SALIDA: False 
+
+------------------------------------------------------PUERTA NUMERO: 6 
+TIPO PUERTA: XNOR 
+CONEXIONES: [3, 4] 
+SALIDA: False 
+
+------------------------------------------------------PUERTA NUMERO: 7 
+TIPO PUERTA: AND 
+CONEXIONES: [5, 2] 
+SALIDA: False 
+
+------------------------------------------------------PUERTA NUMERO: 8 
+TIPO PUERTA: OR 
+CONEXIONES: [3, 0] 
+SALIDA: True 
+
