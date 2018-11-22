@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from PyQt5.QtWidgets  import QMainWindow, QWidget, QPushButton, QLineEdit, QInputDialog, QApplication,QMessageBox
 import sys
 import random
@@ -67,17 +70,17 @@ class Puerta:
         return 'Puerta {}, Conexiones: {}, Defectuosa: {}, Tipo: {}, Salida: {}'.format(self.index, self.conexiones, self.defectuosa, self.get_tipo(), self.get_salida())
 
 
-#Genera 10 entradas de tamaño n para probarlas con los circuitos.
+#Genera 10 entradas de tamano n para probarlas con los circuitos.
 def generar_entradas(n):
     for i in range(0,10):
         entrada = numpy.random.choice([0, 1], size=(int(n),))
         entradas_generales.append(entrada)
 
 
-#Dibuja el circuito en una imágen y lo escribe en un fichero
+#Dibuja el circuito en una imagen y lo escribe en un fichero
 def representa_circuito(entradas,puertas,imagen,archivo,c_def=[]):
     
-    #Para la representación en imagen
+    #Para la representacion en imagen
     c = nx.DiGraph()
     
     colores = []
@@ -116,7 +119,7 @@ def representa_circuito(entradas,puertas,imagen,archivo,c_def=[]):
         if not c_def:
             c.add_edges_from([(puerta1,'{} {}'.format(p.index,p.get_tipo())),(puerta2,'{} {}'.format(p.index,p.get_tipo()))],color='black')
         else:
-            #Puede que el algoritmo haga uso de una conexión defectuosa
+            #Puede que el algoritmo haga uso de una conexion defectuosa
             for x in range(0, len(c_def)):
                 #Puerta z a Puerta j
                 if(c_def[x][0]==str(p.conexiones[0]) and c_def[x][1]==str(p.index)):
@@ -137,10 +140,10 @@ def representa_circuito(entradas,puertas,imagen,archivo,c_def=[]):
     plt.plot([],[],'blue',label="Salida = 1")
     plt.plot([],[],'bisque',label="Salida = 0")  
     plt.plot([],[],'red',label="Puerta defectuosa")
-    plt.plot([],[],'pink',label="Conexión defectuosa")
+    plt.plot([],[],'pink',label="Conexion defectuosa")
     plt.legend(bbox_to_anchor=(1,1), loc="best")
     
-    #Para la representación en texto
+    #Para la representacion en texto
     file = open(archivo,"w") 
 
     for i in range(0,len(puertas)):
@@ -250,7 +253,7 @@ def reconstruct(individuo, entradas, puertas_defectuosas, conexiones_defectuosas
                 
                 
         
-        #Comprobamos si el índice de la puerta se corresponde a una defectuosa
+        #Comprobamos si el indice de la puerta se corresponde a una defectuosa
         defectuosa = 0
         if (len(puertas_defectuosas)!=0 and str(j) in puertas_defectuosas):
             defectuosa = 1
@@ -265,7 +268,7 @@ def reconstruct(individuo, entradas, puertas_defectuosas, conexiones_defectuosas
             if(conexiones_defectuosas[x][0]==str(puerta_origen2) and conexiones_defectuosas[x][1]==str(j)):
                 entrada2 = 0
         
-        #Se crea la puerta, se le asigna la salida y se añade a la lista de puertas
+        #Se crea la puerta, se le asigna la salida y se anade a la lista de puertas
         puerta = Puerta(j, tipo, [puerta_origen1,puerta_origen2], defectuosa)
         puerta.asignar_salida(entrada1,entrada2)
         puertas_algoritmo.append(puerta)
