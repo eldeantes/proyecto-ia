@@ -1,2 +1,2 @@
-# proyecto-ia
-Repositorio para proyecto de Inteligencia Artificial
+# REPARACIÓN AUTOMÁTICA DE CIRCUITOS MEDIANTE ALGORITMO GENÉTICO
+El objetivo de este trabajo es explicar cómo se ha llevado a cabo la implementación de un algoritmo genético capaz de hacer un diagnóstico de diferentes circuitos y que éstos se reconfiguren automáticamente en el caso de existir un fallo. Este algoritmo permite la auto reparación de circuitos dada una colección de vectores de entrada, calculando los vectores de salida ideales y comparándolos con los obtenidos en un determinado momento.
